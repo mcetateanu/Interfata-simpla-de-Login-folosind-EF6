@@ -6,3 +6,5 @@
 Acest lucru se face folosind mediul de dezvoltare VStudio. 
 
 Baza de date in exemplul nostru este cea mai simpla cu putinta, continand un singur tabel.
+
+![](Login_Magazin-dbo.png)

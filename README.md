@@ -10,7 +10,7 @@ Baza de date in exemplul nostru Login_Magazin este cea mai simpla cu putinta, co
 ![](Login_Magazin-dbo.png)
 
 
-Scriptul pentru creearea bazei de date este:
+Scriptul pentru creearea bazei de date este urmatorul:
 ```
 USE [Login_Magazin]
 GO
@@ -32,6 +32,32 @@ PRIMARY KEY CLUSTERED
 	[User_ID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
+GO
+```
+De asemenea, pentru usurinta introducerii datelor din form-uri in DB a fost creeata o procedura de insert data:
+
+```
+USE [Login_Magazin]
+GO
+
+/****** Object:  StoredProcedure [Login_Magazin].[uspNewUser_Name]    Script Date: 01/03/2021 22:06:59 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [Login_Magazin].[uspNewUser_Name]  
+@User_Name NVARCHAR (40),  
+@Password_ NVARCHAR (40),  
+@Type INT = 1,
+@User_ID INT OUTPUT
+AS  
+BEGIN  
+INSERT INTO [Login_Magazin].[Users_1] ([User_Name], [Password_], [Type])  VALUES (@User_Name, @Password_, @Type);  
+SET @User_ID = SCOPE_IDENTITY();  
+RETURN @User_ID  
+END   
 GO
 ```
 

@@ -10,6 +10,9 @@ Baza de date in exemplul nostru Login_Magazin este cea mai simpla cu putinta, co
 ![](Login_Magazin-dbo.png)
 
 
+
+
+
 Scriptul pentru creearea bazei de date este urmatorul:
 ```
 USE [Login_Magazin]

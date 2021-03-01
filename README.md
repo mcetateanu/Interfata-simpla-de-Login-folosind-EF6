@@ -8,7 +8,7 @@ Acest lucru se face folosind mediul de dezvoltare VStudio.
 Baza de date in exemplul nostru Login_Magazin este cea mai simpla cu putinta, continand un singur tabel denumit Users_1.
 
 ![](Login_Magazin-dbo.png)
-
+---
 
 
 

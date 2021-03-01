@@ -5,6 +5,6 @@
   Modelul de programare centrat pe baza de date, presupune ca baza de date este creata si apoi se genereaza modelul logic ce contine tipurile folosite in logica aplicatiei.
 Acest lucru se face folosind mediul de dezvoltare VStudio. 
 
-Baza de date in exemplul nostru este cea mai simpla cu putinta, continand un singur tabel.
+Baza de date in exemplul nostru Login_Magazin este cea mai simpla cu putinta, continand un singur tabel denumit Users_1.
 
 ![](Login_Magazin-dbo.png)

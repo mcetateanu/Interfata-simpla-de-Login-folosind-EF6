@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin_Magazin));
             this.txtUserNameLogin = new System.Windows.Forms.TextBox();
             this.txtPassword_Login = new System.Windows.Forms.TextBox();
             this.lblUser_ID = new System.Windows.Forms.Label();
@@ -37,8 +38,10 @@
             this.btnNewUser = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnExitLogin = new System.Windows.Forms.Button();
+            this.picLogin = new System.Windows.Forms.PictureBox();
             this.gbxLogin.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogin)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUserNameLogin
@@ -138,11 +141,22 @@
             this.btnExitLogin.UseVisualStyleBackColor = true;
             this.btnExitLogin.Click += new System.EventHandler(this.btnExitLogin_Click);
             // 
+            // picLogin
+            // 
+            this.picLogin.Image = ((System.Drawing.Image)(resources.GetObject("picLogin.Image")));
+            this.picLogin.Location = new System.Drawing.Point(703, 89);
+            this.picLogin.Name = "picLogin";
+            this.picLogin.Size = new System.Drawing.Size(207, 312);
+            this.picLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogin.TabIndex = 8;
+            this.picLogin.TabStop = false;
+            // 
             // FormLogin_Magazin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(969, 530);
+            this.Controls.Add(this.picLogin);
             this.Controls.Add(this.btnExitLogin);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbxLogin);
@@ -153,6 +167,7 @@
             this.gbxLogin.ResumeLayout(false);
             this.gbxLogin.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picLogin)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -168,6 +183,7 @@
         private System.Windows.Forms.Button btnNewUser;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnExitLogin;
+        private System.Windows.Forms.PictureBox picLogin;
     }
 }
 

@@ -36,7 +36,9 @@
             this.btnSubmitNewUser = new System.Windows.Forms.Button();
             this.gbxNewUser = new System.Windows.Forms.GroupBox();
             this.btnCancelCreateNewUser = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbxNewUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNewUser
@@ -124,11 +126,22 @@
             this.btnCancelCreateNewUser.UseVisualStyleBackColor = true;
             this.btnCancelCreateNewUser.Click += new System.EventHandler(this.btnCancelCreateNewUser_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.Ra6d0909857b337cd882be4d9405d6d88;
+            this.pictureBox1.Location = new System.Drawing.Point(676, 104);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(180, 260);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormCreateNewUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 485);
+            this.ClientSize = new System.Drawing.Size(882, 485);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCancelCreateNewUser);
             this.Controls.Add(this.gbxNewUser);
             this.Controls.Add(this.btnSubmitNewUser);
@@ -139,6 +152,7 @@
             this.Load += new System.EventHandler(this.FormCreateNewUser_Load);
             this.gbxNewUser.ResumeLayout(false);
             this.gbxNewUser.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,5 +168,6 @@
         private System.Windows.Forms.Button btnSubmitNewUser;
         private System.Windows.Forms.GroupBox gbxNewUser;
         private System.Windows.Forms.Button btnCancelCreateNewUser;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

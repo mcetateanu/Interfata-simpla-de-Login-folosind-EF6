@@ -66,5 +66,5 @@ GO
 In acest moment baza de date este pregatita pentru a fi accesata si incarcata cu date. 
 
 
-![](Properties/frmLogin.jpg)
+![](Interfata-simpla-de-Login-folosind-EF6/Properties/frmLogin.jpg)
 

@@ -64,3 +64,7 @@ END
 GO
 ```
 In acest moment baza de date este pregatita pentru a fi accesata si incarcata cu date. 
+
+
+![](Properties/frmLogin.jpg)
+

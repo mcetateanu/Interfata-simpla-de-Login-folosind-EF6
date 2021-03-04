@@ -65,10 +65,12 @@ GO
 ```
 In acest moment baza de date este pregatita pentru a fi accesata si incarcata cu date. 
 
-Partea grafica a proiectului include doua form-uri . Primul, formularul de Login invita la logare cu un nume si o parola existenta
+Partea grafica a proiectului include doua form-uri . Primul, formularul de Login, invita la logare cu un nume si o parola existenta:
+
 ![](Interfata-simpla-de-Login-folosind-EF6/Properties/frmLogin.jpg)
 
  sau in lipsa acestora se poate creea un cont nou.
+ 
 ![](Interfata-simpla-de-Login-folosind-EF6/Properties/frmNewUser.jpg)
 
 

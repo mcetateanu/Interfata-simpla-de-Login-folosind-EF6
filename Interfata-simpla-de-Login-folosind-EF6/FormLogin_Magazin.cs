@@ -1,13 +1,35 @@
 ﻿using System;
+using System.Text;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using WindowsFormsApp1;
+using System.Security.Cryptography;
 
 namespace WindowsFormsLogin_Magazin
 {
     public partial class FormLogin_Magazin : Form
     {
-        
+        private string CriptedMethod(string text)
+        {
+            MD5 md5 = new MD5CryptoServiceProvider();
+
+            //compute hash from the bytes of text  
+            md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(text));
+
+            //get hash result after compute it  
+            byte[] result = md5.Hash;
+
+            StringBuilder strBuilder = new StringBuilder();
+            for (int i = 0; i < result.Length; i++)
+            {
+                //change it into 2 hexadecimal digits  
+                //for each byte  
+                strBuilder.Append(result[i].ToString("x2"));
+            }
+
+            return strBuilder.ToString();
+        }
+
 
         public FormLogin_Magazin()
         {
@@ -33,6 +55,9 @@ namespace WindowsFormsLogin_Magazin
         {
             int LoginSwitch = 0;
 
+
+           // string Password = CriptedMethod(txtPassword_Login.Text);
+
             Login_MagazinEntities Log_Mag_Ent = new Login_MagazinEntities();
 
             LoginSwitch = LoginMethod(LoginSwitch, Log_Mag_Ent);
@@ -42,13 +67,15 @@ namespace WindowsFormsLogin_Magazin
             if (LoginSwitch == 0) MessageBox.Show("User is NOT logged.");
         }
 
+        
+
         private int LoginMethod(int LoginSwitch, Login_MagazinEntities Log_Mag_Ent)
         {
             foreach (var Login in Log_Mag_Ent.Users_1)
             {
 
                 if ((Login.User_Name == txtUserNameLogin.Text) & 
-                    (Login.Password_ == txtPassword_Login.Text))
+                    (Login.Password_ == CriptedMethod(txtPassword_Login.Text)))
                 {
                     LoginSwitch = Login.Type;
                     break;

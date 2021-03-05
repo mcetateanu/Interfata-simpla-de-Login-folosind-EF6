@@ -1,4 +1,5 @@
 ﻿using System;
+
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,11 +9,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
 
 namespace WindowsFormsApp1
 {
     public partial class FormCreateNewUser : Form
     {
+
+        private string CriptedMethod(string text)
+        {
+            MD5 md5 = new MD5CryptoServiceProvider();
+
+            //compute hash from the bytes of text  
+            md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(text));
+
+            //get hash result after compute it  
+            byte[] result = md5.Hash;
+
+            StringBuilder strBuilder = new StringBuilder();
+            for (int i = 0; i < result.Length; i++)
+            {
+                //change it into 2 hexadecimal digits  
+                //for each byte  
+                strBuilder.Append(result[i].ToString("x2"));
+            }
+
+            return strBuilder.ToString();
+        }
         public FormCreateNewUser()
         {
             InitializeComponent();
@@ -76,7 +99,7 @@ namespace WindowsFormsApp1
                         sqlCommand.Parameters.Add(new SqlParameter("@User_Name", SqlDbType.NVarChar, 40));
                         sqlCommand.Parameters["@User_Name"].Value = txtNewUser.Text;
                         sqlCommand.Parameters.Add(new SqlParameter("@Password_", SqlDbType.NVarChar, 40));
-                        sqlCommand.Parameters["@Password_"].Value = txtNewPassword.Text;
+                        sqlCommand.Parameters["@Password_"].Value = CriptedMethod(txtNewPassword.Text) ;
 
 
                         // Add the output parameter.
